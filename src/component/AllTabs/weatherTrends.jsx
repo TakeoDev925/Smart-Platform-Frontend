@@ -7,6 +7,15 @@ import { TiWeatherSunny } from "react-icons/ti";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { TiWeatherSnow } from "react-icons/ti";
 import { BsArrowUp, BsArrowDown } from "react-icons/bs";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
 import { BarChart } from '@mui/x-charts/BarChart';
@@ -47,6 +56,132 @@ const data = [
   { id: 2, value: 20, label: 'series C' },
 ];
 
+const chartSetting = {
+  yAxis: [
+    {
+      label: '(名)',
+    },
+  ],
+  width: 500,
+  height: 300,
+  margin: {
+    top: 50,
+  },
+  sx: {
+    [`.${axisClasses.left} .${axisClasses.label}`]: {
+      transform: 'translate(-10px, 15px)',
+      color: 'yellow'
+    },
+    [`.${axisClasses.bottom} .${axisClasses.stroke}`]: {
+      transform: 'translate(0px, 5px)',
+      color: 'red'
+    },
+  },
+  viewBox: {
+    width: 5
+  }
+};
+
+const dataset = [
+  {
+    shanghai: 5900,
+    erdaojiang: 5700,
+    meihekou: 8600,
+    jian: 2100,
+    tonghua: 3100,
+    month: '1月',
+  },
+  {
+    shanghai: 7000,
+    erdaojiang: 5200,
+    meihekou: 7800,
+    jian: 9800,
+    tonghua: 4100,
+    month: '2月',
+  },
+  {
+    shanghai: 4700,
+    erdaojiang: 5300,
+    meihekou: 1060,
+    jian: 4100,
+    tonghua: 7500,
+    month: '3月',
+  },
+  {
+    shanghai: 5400,
+    erdaojiang: 6600,
+    meihekou: 9200,
+    jian: 7300,
+    tonghua: 3100,
+    month: '4月',
+  },
+  {
+    shanghai: 5700,
+    erdaojiang: 6900,
+    meihekou: 9200,
+    jian: 9900,
+    tonghua: 8100,
+    month: '5月',
+  },
+  {
+    shanghai: 6000,
+    erdaojiang: 6300,
+    meihekou: 10300,
+    jian: 12400,
+    tonghua: 3100,
+    month: '6月',
+  },
+  {
+    shanghai: 5900,
+    erdaojiang: 6000,
+    meihekou: 10500,
+    jian: 3190,
+    tonghua: 8100,
+    month: '7月',
+  },
+  {
+    shanghai: 6500,
+    erdaojiang: 6000,
+    meihekou: 10600,
+    jian: 2490,
+    tonghua: 3333,
+    month: '8月',
+  },
+  {
+    shanghai: 5100,
+    erdaojiang: 5100,
+    meihekou: 9500,
+    jian: 13100,
+    tonghua: 3100,
+    month: '9月',
+  },
+  {
+    shanghai: 6000,
+    erdaojiang: 6500,
+    meihekou: 9700,
+    jian: 5500,
+    tonghua: 3100,
+    month: '10月',
+  },
+  {
+    shanghai: 6700,
+    erdaojiang: 6400,
+    meihekou: 7600,
+    jian: 4800,
+    tonghua: 3100,
+    month: '11月',
+  },
+  {
+    shanghai: 6100,
+    erdaojiang: 7000,
+    meihekou: 10300,
+    jian: 2500,
+    tonghua: 5100,
+    month: '12月',
+  },
+];
+
+const valueFormatter = (value) => `${value}人`;
 
 const WeatherTrends = () => {
   const [currentDistrict, setCurrentDistrict] = useState(null);
@@ -139,6 +274,37 @@ const WeatherTrends = () => {
           <div class="w-full mb-6 mr-40">
             <div class="flex p-6">
               <div class="flex  flex-col">
+                <label class="flex text-white text-[18px] font-bold">游客来访方式</label>
+                <img
+                  src={Line1}
+                  class="w-[130px] h-[4px]"
+                  alt="line1"
+                />
+              </div>
+              <img
+                src={Line2}
+                class="w-[340px] h-[13px] mt-[15px] -ml-0"
+                alt="line1"
+              />
+            </div>
+            <div class="flex flex-col w-full pl-6 pr-10">
+              <div class="flex flex-row">
+                <NumberAvatar icon={Icona} value={18600} />
+                <NumberAvatar class="ml-10" icon={Iconf} value={8600} />
+              </div>
+              <div class="flex flex-row my-4">
+                <NumberAvatar icon={Iconc} value={3000} />
+                <NumberAvatar class="ml-10" icon={Icone} value={2400} />
+              </div>
+              {/* <div class="flex flex-row">
+                <NumberAvatar icon={Icone} value={1240} />
+                <NumberAvatar class="ml-10" icon={Iconf} value={1991} />
+              </div> */}
+            </div>
+          </div>
+          <div class="w-full mb-6 mr-40">
+            <div class="flex p-6">
+              <div class="flex  flex-col">
                 <label class="flex text-white text-[18px] font-bold">近一年客流趋势</label>
                 <img
                   src={Line1}
@@ -153,18 +319,14 @@ const WeatherTrends = () => {
               />
             </div>
             <div class="flex flex-col w-full pl-6 pr-10">
-              <div class="flex flex-row">
-                <NumberAvatar icon={Icona} value={1860} />
-                <NumberAvatar class="ml-10" icon={Iconb} value={860} />
-              </div>
-              <div class="flex flex-row my-4">
-                <NumberAvatar icon={Iconc} value={300} />
-                <NumberAvatar class="ml-10" icon={Icond} value={240} />
-              </div>
-              <div class="flex flex-row">
-                <NumberAvatar icon={Icone} value={1240} />
-                <NumberAvatar class="ml-10" icon={Iconf} value={1991} />
-              </div>
+              <BarChart
+                dataset={dataset}
+                xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+                series={[
+                  { dataKey: 'shanghai', label: '上海', valueFormatter, color: '#19ffe9' },
+                ]}
+                {...chartSetting}
+              />
             </div>
           </div>
         </div>
@@ -221,45 +383,51 @@ const WeatherTrends = () => {
             <div class="flex w-[520px] px-6 justify-end -mt-2">
               <div class="flex flex-col w-full ">
                 <div class="flex flex-row justify-between border-b border-[#347eed] pb-2">
-                  <label class="text-white w-1/3 text-left">发病统计</label>
-                  <label class="text-white w-1/4 text-left">甲类</label>
-                  <label class="text-white w-1/4 text-left">乙类</label>
-                  <label class="text-white w-1/4 text-left">丙类</label>
+                  <label class="text-white w-1/3 text-left">目的地</label>
+                  <label class="text-white w-1/4 text-left">人数（万）</label>
+                  <label class="text-white w-1/4 text-left">地市</label>
+                  <label class="text-white w-1/4 text-left">省级</label>
                 </div>
                 <div class="flex flex-row justify-between border-b border-[#347eed] py-2">
-                  <label class="text-white w-1/3 text-left">发病数（万）</label>
+                  <label class="text-white w-1/3 text-left">张家界张家界</label>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">0.03</label>
+                    <label class="flex text-white text-left">12.3</label>
+                    <BsArrowUp color="red" size={12} />
+                    <label class="flex text-[red] text-left text-[12px]">0.1%</label>
+                  </div>
+                  <div class="flex flex-row w-1/4 items-center">
+                    <label class="flex text-white text-left">張家界市</label>
+                  </div>
+                  <div class="flex flex-row w-1/4 items-center">
+                    <label class="flex text-white text-left">湖南省</label>
+                  </div>
+                </div>
+                <div class="flex flex-row justify-between border-b border-[#347eed] py-2">
+                  <label class="text-white w-1/3 text-left">九寨沟九寨沟</label>
+                  <div class="flex flex-row w-1/4 items-center">
+                    <label class="flex text-white text-left">12.1</label>
                     <BsArrowDown color="#02deff" size={12} />
-                    <label class="flex text-[#02deff] text-left text-[12px]">0.01%</label>
+                    <label class="flex text-[#02deff] text-left text-[12px]">0.2%</label>
                   </div>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">163.00</label>
-                    <BsArrowUp color="red" size={12} />
-                    <label class="flex text-[red] text-left text-[12px]">8.6%</label>
+                    <label class="flex text-white text-left">九寨沟县</label>
                   </div>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">127.5</label>
-                    <BsArrowUp color="red" size={12} />
-                    <label class="flex text-[red] text-left text-[12px]">14.1%</label>
+                    <label class="flex text-white text-left">四川省</label>
                   </div>
                 </div>
                 <div class="flex flex-row justify-between py-2">
-                  <label class="text-white w-1/3 text-left">发病率（%）</label>
+                  <label class="text-white w-1/3 text-left">拉萨拉萨</label>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">0.4</label>
+                    <label class="flex text-white text-left">11.8</label>
                     <BsArrowDown color="#02deff" size={12} />
-                    <label class="flex text-[#02deff] text-left text-[12px]">0.02%</label>
+                    <label class="flex text-[#02deff] text-left text-[12px]">0.3%</label>
                   </div>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">100</label>
-                    <BsArrowUp color="red" size={12} />
-                    <label class="flex text-[red] text-left text-[12px]">2.4%</label>
+                    <label class="flex text-white text-left">會城市</label>
                   </div>
                   <div class="flex flex-row w-1/4 items-center">
-                    <label class="flex text-white text-left">81.5</label>
-                    <BsArrowUp color="red" size={12} />
-                    <label class="flex text-[red] text-left text-[12px]">14.1%</label>
+                    <label class="flex text-white text-left">陝西省</label>
                   </div>
                 </div>
               </div>
@@ -271,13 +439,13 @@ const WeatherTrends = () => {
                 <label class="flex text-white text-[18px] font-bold">客流来源排名TOP5</label>
                 <img
                   src={Line1}
-                  class="w-[150px] h-[4px]"
+                  class="w-[170px] h-[4px]"
                   alt="line1"
                 />
               </div>
               <img
                 src={Line2}
-                class="w-[320px] h-[10px] mt-[15px] -ml-0 "
+                class="w-[300px] h-[10px] mt-[15px] -ml-0 "
                 alt="line1"
               />
             </div>
@@ -286,10 +454,10 @@ const WeatherTrends = () => {
                 series={[
                   {
                     data: [
-                      { id: 0, value: 10, label: '北京', color: 'tomato' },
-                      { id: 1, value: 15, label: '重庆' },
-                      { id: 2, value: 20, label: '上海' },
-                      { id: 3, value: 20, label: '天津' },
+                      { id: 0, value: 100, label: '北京', color: 'tomato' },
+                      { id: 1, value: 50, label: '重庆' },
+                      { id: 2, value: 40, label: '上海' },
+                      { id: 3, value: 30, label: '天津' },
                       { id: 4, value: 20, label: '安庆' },
                     ],
                     innerRadius: 35,

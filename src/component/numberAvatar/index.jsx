@@ -17,7 +17,7 @@ function NumberAvatar(props) {
         />
       </div>
       <div class="flex flex-col ml-3 justify-center">
-        <label class="flex text-white opacity-50 mt-1">今日就诊人数</label>
+        <label class="flex text-white opacity-50 mt-1">今日旅游人数</label>
         <div class="flex flex-row items-center -mt-2">
           <label class="flex text-[#61ddb1] font-DS-DIGI text-[28px] font-semibold ">{props.value}</label>
           <label class="flex text-white ml-2 text-[14px]">人</label>
