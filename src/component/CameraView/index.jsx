@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
+import styles from './styles'
 
 function CameraView({ cameras }) {
   const [selectIndex, setSelectIndex] = useState(0);
@@ -13,13 +13,15 @@ function CameraView({ cameras }) {
   if (!cameras[selectIndex]) return <></>;
   return (
     <Draggable>
-      <div class="flex items-center w-[300px] h-[200px]">
-        <label class="flex text-white mt-1">{cameras[selectIndex].name}</label>
-        {isCameraList && (
-          <div class="overflow-auto absolute top-[36px] right-[10px] h-[250px]">
+      <div style={styles.layout}>
+        <img src={cameras[selectIndex].image} style={styles.cameraImage} alt='camera' />
+        {/* <span class="flex text-white mt-1">"{cameras[selectIndex].name}"</span> */}
+        {/* {isCameraList && (
+          <div class="overflow-auto absolute top-[36px] right-[10px] h-[250px]" style={styles.cameraView}>
             {cameras.map((c, index) => (
               <div
                 class="bg-[#438be9] mr-[5px] cursor-pointer mb-[10px]"
+                style={styles.cameraSubView}
                 key={c.id}
                 isSelected={selectIndex === index}
                 onClick={() => {
@@ -31,7 +33,7 @@ function CameraView({ cameras }) {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </Draggable>
   )

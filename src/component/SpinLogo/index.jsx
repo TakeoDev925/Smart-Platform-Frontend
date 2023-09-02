@@ -1,27 +1,19 @@
-import React from "react";
-import Map from "../../assets/png/map.png";
-import Lbx from "../../assets/png/lbx.png";
+import React from 'react'
+import Map from '../../assets/png/map.png'
+import Lbx from '../../assets/png/lbx.png'
+import styles from "./styles";
 
-function SpinLogo(props) {
+function SpinLogo (props) {
   return (
-    <div
-      class="flex w-[500px] h-[500px] items-center justify-center"
-    >
+    <div style={styles.layout}>
+      <img src={Map} style={styles.mapImage} alt='map' />
       <img
-          src={Map}
-          class="flex w-[360px] h-[360px]"
-          alt="map"
-        />
-        <img
-          src={Lbx}
-          class="flex w-[500px] h-[500px] absolute animate-waving-hand"
-          alt="lbx"
-        />
+        src={Lbx}
+        className='App-logo'
+        alt='lbx'
+      />
     </div>
-  );
+  )
 }
 
-
-
-export default SpinLogo;
-
+export default SpinLogo
