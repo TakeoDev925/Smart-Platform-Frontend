@@ -16,11 +16,7 @@ import WeatherIcon from "../../assets/png/weather.png";
 import styles from './styles'
 
 const chartSetting = {
-  yAxis: [
-    {
-      label: '(名)',
-    },
-  ],
+  
   width: 500,
   height: 300,
   margin: {
