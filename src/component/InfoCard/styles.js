@@ -1,52 +1,67 @@
-import Stylesheet from "reactjs-stylesheet";
+import Stylesheet from 'reactjs-stylesheet'
 
 const styles = Stylesheet.create({
-	layout: {
-    // width: '100%',
-    height: 300,
+  layout: {
+    // height: '100%',
     display: 'flex',
-    maxHeight: 400,
-    border: '1px solid #054671', 
+    border: '1px solid #054671',
     overflow: 'hidden',
-    backgroundColor: '#054671',
+    backgroundColor: '#0b3e77',
     position: 'relative',
     paddingTop: 40,
     paddingBottom: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-    zIndex: 1000,
-	},
-	topBgImage: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    borderBottomRightRadius: 16,
+    borderBottomLeftRadius: 16,
+    zIndex: 1000
+  },
+  topBgImage: {
     width: '100%',
     height: '60px',
     position: 'absolute',
     top: 0,
-    left: 0,
+    left: 0
   },
   name: {
     position: 'absolute',
-    left: 50,
-    top: -5,
+    left: '25%',
+    top: 0,
     borderRadius: 10,
     borderLeft: '1px solid #054671',
     borderRight: '1px solid #054671',
-    borderBottom: '1px solid #054671', 
+    borderBottom: '1px solid #054671',
     padding: 10,
-    width: 240,
+    width: '50%',
     textAlign: 'center',
     backgroundColor: '#e4ffe5',
     color: '#f29701',
+    fontSize: 18 ,
+    fontWeight: 600
   },
   innerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
     width: '100%',
     height: '100%',
     overflowY: 'auto',
+  },
+  numberText: {
+    fontSize: 18,
+    fontWeight: 800,
+    marginBottom: 10,
+    color: 'white',
+    textAlign: 'left',
+    marginTop: 20,
+    paddingBottom: 10,
+    borderBottom: '2px dashed gray'
   },
   description: {
     fontSize: 16,
     marginBottom: 10,
     color: 'white',
     marginTop: 5,
-  },
-});
-export default styles;
+    textAlign: 'left',
+  }
+})
+export default styles
