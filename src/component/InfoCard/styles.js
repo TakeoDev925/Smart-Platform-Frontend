@@ -2,7 +2,6 @@ import Stylesheet from 'reactjs-stylesheet'
 
 const styles = Stylesheet.create({
   layout: {
-    // height: '100%',
     display: 'flex',
     border: '1px solid #054671',
     overflow: 'hidden',
