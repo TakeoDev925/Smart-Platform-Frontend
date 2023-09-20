@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Draggable from 'react-draggable';
+import React from 'react'
 import styles from './styles'
 
-function InfoCard({ data, name, description }) {
-  const [info, setInfo] = useState(null);
-  useEffect(() => {
-    if (!data) return;
-    setInfo(JSON.parse(data));
-  }, [data]);
-
+function InfoCard ({ data, name, description }) {
   return (
-    <Draggable>
-      <div style={styles.layout}>
-        <label style={styles.name}>{name}</label>
-        <div style={styles.innerContainer}>
-          <div style={styles.description}>
-            {description}
-          </div>
-        </div>
+    <div style={styles.layout}>
+      <label style={styles.name}>{name}</label>
+      <div style={styles.innerContainer}>
+        <span style={styles.numberText}>旅游人数: {Math.ceil(Math.random() * 10000 + 5000) }人</span>
+        <span style={styles.description}>{description}</span>
       </div>
-    </Draggable>
+    </div>
   )
 }
 
-export default InfoCard;
-
+export default InfoCard

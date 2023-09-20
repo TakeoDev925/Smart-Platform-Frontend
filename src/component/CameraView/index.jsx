@@ -1,43 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import Draggable from 'react-draggable';
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Navigation, Autoplay } from 'swiper'
+import 'swiper/swiper.min.css'
+import 'swiper/swiper-bundle.css';
+
+import { AiOutlineClose } from 'react-icons/ai'
 import styles from './styles'
 
-function CameraView({ cameras }) {
-  const [selectIndex, setSelectIndex] = useState(0);
-  const [isCameraList, setIsCameraList] = useState(false);
+function CameraView ({ cameras, onClose }) {
+  const [selectIndex, setSelectIndex] = useState(0)
 
   useEffect(() => {
-    setSelectIndex(0);
-  }, [cameras]);
+    setSelectIndex(0)
+  }, [cameras])
 
-  if (!cameras[selectIndex]) return <></>;
+  if (!cameras[selectIndex]) return <></>
   return (
-    <Draggable>
-      <div style={styles.layout}>
-        <img src={cameras[selectIndex].image} style={styles.cameraImage} alt='camera' />
-        {/* <span class="flex text-white mt-1">"{cameras[selectIndex].name}"</span> */}
-        {/* {isCameraList && (
-          <div class="overflow-auto absolute top-[36px] right-[10px] h-[250px]" style={styles.cameraView}>
-            {cameras.map((c, index) => (
-              <div
-                class="bg-[#438be9] mr-[5px] cursor-pointer mb-[10px]"
-                style={styles.cameraSubView}
-                key={c.id}
-                isSelected={selectIndex === index}
-                onClick={() => {
-                  setSelectIndex(index);
-                  setIsCameraList(false);
-                }}
-              >
-                {c.name}
-              </div>
-            ))}
-          </div>
-        )} */}
+    <div style={styles.layout}>
+      <div style={styles.closeBtn} onClick={onClose}>
+        <AiOutlineClose style={{ color: 'white', fontSize: '40px' }} />
       </div>
-    </Draggable>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: true
+        }}
+        pagination={{
+          clickable: true
+        }}
+        loop={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className='mySwiper'
+      >
+        {cameras.map((item, index) => {
+          return (
+            <SwiperSlide>
+              <img
+                key={item.id}
+                src={cameras[index].image}
+                style={styles.cameraImage}
+                alt='camera'
+              />
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+    </div>
   )
 }
 
-export default CameraView;
-
+export default CameraView

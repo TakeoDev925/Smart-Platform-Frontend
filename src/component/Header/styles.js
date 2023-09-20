@@ -1,20 +1,20 @@
-import Stylesheet from "reactjs-stylesheet";
+import Stylesheet from 'reactjs-stylesheet'
 
 const styles = Stylesheet.create({
-	layout: {
-    display: "flex",
+  layout: {
+    display: 'flex',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    top: 0,
-	},
-	topBgImage: {
+    top: 0
+  },
+  topBgImage: {
     width: '100%',
     height: '60px',
     position: 'absolute',
     top: 0,
-    left: 0,
+    left: 0
   },
   title: {
     width: '100%',
@@ -24,7 +24,7 @@ const styles = Stylesheet.create({
     color: 'white',
     position: 'absolute',
     top: 0,
-    left: 0,
-  },
-});
-export default styles;
+    left: 0
+  }
+})
+export default styles

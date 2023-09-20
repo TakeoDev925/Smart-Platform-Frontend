@@ -1,17 +1,17 @@
-import Stylesheet from "reactjs-stylesheet";
+import Stylesheet from 'reactjs-stylesheet'
 
 const styles = Stylesheet.create({
-	layout: {
-    display: "flex",
+  layout: {
+    display: 'flex',
     flexDirection: 'row',
-    width: 180,
-    alignItems: 'center',
-	},
+    width: 225,
+    alignItems: 'center'
+  },
   avatarView: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 70,
+    height: 70
   },
   avatarIconImage: {
     width: 45,
@@ -23,31 +23,31 @@ const styles = Stylesheet.create({
     display: 'flex',
     flexDirection: 'column',
     marginLeft: 12,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   numberAvatarTextTitle: {
     display: 'flex',
     color: 'white',
     opacity: 0.5,
-    marginTop: 4,
+    marginTop: 4
   },
   numberAvatarTextSubView: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: -4,
+    marginTop: -4
   },
   numberAvatarTextSubValue: {
     display: 'flex',
     color: '#61ddb1',
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   numberAvatarTextSubValue1: {
     display: 'flex',
     color: 'white',
     fontSize: 14,
-    marginLeft: 8,
-  },
-});
-export default styles;
+    marginLeft: 8
+  }
+})
+export default styles

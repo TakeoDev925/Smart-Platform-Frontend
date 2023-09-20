@@ -1,5 +1,4 @@
 import React from 'react'
-import Bg from '../../../assets/png/bg.png'
 import SpinLogo from '../../../component/SpinLogo'
 import TopBg from '../../../assets/png/topbg.png'
 import { useNavigate } from 'react-router-dom'
@@ -19,8 +18,7 @@ function Home () {
 
       <div style={styles.container}>
         <div
-          // className='menuStartButton'
-          style={{width: 200}}
+          style={{ width: 200 }}
           onClick={goTourism}
           name='menuItemButton'
         ></div>

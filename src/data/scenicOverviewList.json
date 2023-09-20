@@ -9,8 +9,18 @@
     "cameras": [
       {
         "id": "camera_01",
-        "name": "室内 1",
-        "image": "https://i.postimg.cc/2ScFPBLw/111.jpg"
+        "name": "camera_01",
+        "image": "https://i.postimg.cc/hPb55z5f/999.jpg"
+      },
+      {
+        "id": "camera_02",
+        "name": "camera_02",
+        "image": "https://i.postimg.cc/pXRnnP6b/010.jpg"
+      },
+      {
+        "id": "camera_03",
+        "name": "camera_03",
+        "image": "https://i.postimg.cc/QCk9nzVy/013.jpg"
       }
     ]
   },
@@ -26,21 +36,41 @@
         "id": "camera_21",
         "name": "外边",
         "image": "https://i.postimg.cc/2yYCryLc/888.jpg"
+      },
+      {
+        "id": "camera_22",
+        "name": "外边",
+        "image": "https://i.postimg.cc/qMxymN3v/023.jpg"
+      },
+      {
+        "id": "camera_23",
+        "name": "外边",
+        "image": "https://i.postimg.cc/tgMhh8Vd/024.jpg"
       }
     ]
   },
   {
     "id": "佟佳江旅游度假区简介",
-    "lat": 41.734472203081665,
-    "lng": 125.9493116821448,
+    "lat": 41.703229731777044,
+    "lng": 125.92808660261296,
     "name": "佟佳江旅游度假区简介",
     "description": "佟佳江旅游度假区以春、夏、秋、冬为主题打造，通过植物布置实现春观花、夏观叶、秋观色、冬观景的总体规划，打造“山、水、城、园”的布局。度假区内有河流水面和湿地，山体植被丰富，生态环境极佳。区内建设分为：一岛，一带，四大功能区。即演艺核心岛、滨水景观带、城市文化区、运动休闲区、儿童娱乐区、山地度假区。该项目建设与城市空间布局相呼应，打造山、水、城、园”的发展新格局。 演艺核心岛位于整个项目的中心区域，四周水系环绕，岛中心设计马兰花剧场，剧场被水韵广场所围绕，夜幕降临，宛如一朵在水中盛开的马兰花。剧场外部的山水广场面积10480 平方米，由喷泉、绿地、铺装、 标识、雕塑等组成，提取通化山水之城文化，运用写实和抽象的手法设计景观，山水结合寓意走进山水广场就走进了通化。 滨水景观带设计了各种水上体验互动项目，包括码头、水上器械活动，水上体验活动，让孩子们与水充分接触，在水中自由的玩耍，在寒冷的冬季则可作为冰上项目的承载地。 城市文化区包括主入口，停车场，二十四节气广场、迷雾花园、人参广场、荷花塘、码头等。  运动休闲区为市民提供在森林中运动和休闲的场所，共分为静区和动区两个区域。动区主要为体育类运动项目，静区为休闲类体验项目。 游船码头处水域较开敞，码头全场130米由弧线阶梯木平台组成，中间设计休息等待区域，与森林连接处设计文化景墙展示通化旅游文化。 儿童娱乐区是通化的第一个室外无动力儿童游乐场，让儿童充分和大自然接触，以锻炼儿童的体力、智力和增强他们的信心、耐心为核心。植物栽植上以延续自然林带、补充糖槭、垂柳、京桃、海棠等乔木、添加丰富的地被植物、形成森林景观。 山地度假区由山下的帐篷营地和山上的栈道与观景平台组成，人们可以在这里爬山，运动，休闲、观景，满足喜欢山地运动的人们需求。帐篷营地：位于山脚下，体现生态休闲，科普教育，弹性的场地边界赋予了场地原始和自由感，为露营爱好者提供了绝佳的场地。夜晚还可以在此处观看电影。山腰上还设计了集装箱式酒庄，为游客提供停留、休息、品尝红酒等饮品的需求。 佟佳江旅游度假区已于2022年12月被评为国家4A级风景区。",
     "data": "[{\"id\":\"中文名\",\"data\":\"通化市人民医院\"},{\"id\":\"地理位置\",\"data\":\"通化市新华大街232号\"},{\"id\":\"成立时间\",\"data\":\"1949年\"},{\"id\":\"医院等级\",\"data\":\"二级甲等医院\"},{\"id\":\"占地面积\",\"data\":\"20000平方米\"},{\"id\":\"总建筑面积\",\"data\":\"28000平方米\"}]",
     "cameras": [
       {
         "id": "camera_31",
-        "name": "外边",
+        "name": "camera_31",
         "image": "https://i.postimg.cc/26vQbccc/555.jpg"
+      },
+      {
+        "id": "camera_32",
+        "name": "camera_32",
+        "image": "https://i.postimg.cc/N05XfbPK/017.jpg"
+      },
+      {
+        "id": "camera_33",
+        "name": "camera_33",
+        "image": "https://i.postimg.cc/QCk9nzVy/013.jpg"
       }
     ]
   },
@@ -54,8 +84,18 @@
     "cameras": [
       {
         "id": "camera_41",
-        "name": "外边",
+        "name": "camera_41",
         "image": "https://i.postimg.cc/SKn7qNWp/222.jpg"
+      },
+      {
+        "id": "camera_42",
+        "name": "camera_42",
+        "image": "https://i.postimg.cc/Gm3Y6bFJ/018.jpg"
+      },
+      {
+        "id": "camera_43",
+        "name": "camera_43",
+        "image": "https://i.postimg.cc/3RGD2Nh7/020.jpg"
       }
     ]
   },
@@ -69,8 +109,18 @@
     "cameras": [
       {
         "id": "camera_51",
-        "name": "外边",
+        "name": "camera_51",
         "image": "https://i.postimg.cc/W4xm4Lnq/333.jpg"
+      },
+      {
+        "id": "camera_52",
+        "name": "camera_52",
+        "image": "https://i.postimg.cc/3RGD2Nh7/020.jpg"
+      },
+      {
+        "id": "camera_53",
+        "name": "camera_53",
+        "image": "https://i.postimg.cc/mgdMsKVx/021.jpg"
       }
     ]
   },
@@ -84,8 +134,18 @@
     "cameras": [
       {
         "id": "camera_61",
-        "name": "对面",
+        "name": "camera_61",
         "image": "https://i.postimg.cc/x82KKvB0/444.jpg"
+      },
+      {
+        "id": "camera_62",
+        "name": "camera_62",
+        "image": "https://i.postimg.cc/X7LBftRZ/015.jpg"
+      },
+      {
+        "id": "camera_63",
+        "name": "camera_63",
+        "image": "https://i.postimg.cc/L4z1XJv3/016.jpg"
       }
     ]
   }

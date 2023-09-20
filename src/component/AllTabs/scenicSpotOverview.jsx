@@ -2,13 +2,19 @@ import React, { useState } from 'react'
 import CameraView from '../CameraView'
 import InfoCard from '../InfoCard'
 import { Map, Marker, ZoomControl, MapTypeControl } from 'react-bmapgl'
-import WeatherIcon from '../../assets/png/weather.png'
 import mapStyleJson from '../../data/custom_map_config.json'
-import json from '../../data/scenicOverviewList.json'
+import markJson from '../../data/scenicOverviewList.json'
 import styles from './styles'
 
 const ScenicSpotOverview = () => {
   const [selectIndex, setSelectIndex] = useState(null)
+
+  const onClose = () => {
+    setSelectIndex(null);
+  }
+  const onClickMark = (index) => {
+    setSelectIndex(index === selectIndex ? null : index)
+  }
   return (
     <div style={styles.mapContainer}>
       <Map
@@ -20,12 +26,12 @@ const ScenicSpotOverview = () => {
         tilt={40}
         enableScrollWheelZoom
       >
-        {json.map((d, index) => (
+        {markJson.map((d, index) => (
           <Marker
             key={d.id}
             enableDragging
             position={{ lng: d.lng, lat: d.lat }}
-            onClick={() => setSelectIndex(index === selectIndex ? null : index)}
+            onClick={() => onClickMark(index)}
           />
         ))}
         <ZoomControl />
@@ -34,8 +40,8 @@ const ScenicSpotOverview = () => {
 
       {selectIndex !== null && (
         <div style={styles.infoWrapper}>
-          <CameraView cameras={json[selectIndex].cameras} />
-          <InfoCard {...json[selectIndex]} />
+          <CameraView cameras={markJson[selectIndex].cameras} onClose={onClose}/>
+          <InfoCard {...markJson[selectIndex]} />
         </div>
       )}
     </div>

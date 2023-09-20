@@ -11,7 +11,7 @@ const styles = Stylesheet.create({
     display: 'flex',
     color: 'white',
     marginTop: 4,
-    fontSize: 14,
+    fontSize: 14
   }
 })
 export default styles
